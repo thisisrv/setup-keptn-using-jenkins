@@ -38,9 +38,11 @@ if [ $git_present != 0 ];then
     echo "Install Git using this link https://github.com/git-guides/install-git"
 fi
 
-echo
-echo "Installing k3d..."
-bash scripts/install-k3d.sh
+if  [[ ( $docker_present == 0 ) && ( $kubectl_present == 0 ) && ( $helm_present == 0 ) && ( $git_present == 0 ) ]];then
+    echo
+    echo "Installing k3d..."
+    bash scripts/install-k3d.sh
 
-echo "Installing and Setting up Keptn ... "
-bash scripts/setup-keptn-cli.sh
+    echo "Installing and Setting up Keptn ... "
+    bash scripts/setup-keptn-cli.sh
+fi
