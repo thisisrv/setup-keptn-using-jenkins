@@ -6,7 +6,7 @@ echo "2. Kubectl"
 echo "3. Helm" 
 echo "4. Git"
 echo "Checking Docker..."
-sudo docker -v
+docker -v
 docker_present=$?
 echo "Checking Kubectl..."
 kubectl
